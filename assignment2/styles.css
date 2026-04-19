@@ -1,0 +1,378 @@
+html,
+body {
+  font-family: "Arial", sans-serif;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-template-rows: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.left-side-menu {
+  background-color: green;
+  color: white;
+  padding: 20px;
+  fill: white;
+}
+
+.left-side-menu-g1 {
+  margin: 0.5rem;
+  height: 8%;
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+
+  h2 {
+    margin-left: 1rem;
+  }
+}
+
+.left-side-menu-g2 {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem;
+  height: 40%;
+  justify-content: center; /* corrected */
+  align-items: flex-start;
+  margin-top: 2rem;
+}
+
+.left-side-menu-g2 > div {
+  flex: 1;
+  height: calc(100% / 6);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  svg {
+    width: 50%;
+    height: 50%; /* ensures proper aspect ratio */
+    fill: white;
+  }
+
+  h2 {
+    font-size: 1rem;
+    margin-left: 0.5rem;
+  }
+}
+
+.left-side-menu-g3 {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem;
+  height: 20%;
+  justify-content: center; /* corrected */
+  align-items: flex-start;
+  margin-top: 2rem;
+}
+
+.left-side-menu-g3 > div {
+  flex: 1;
+  height: calc(100% / 3);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  svg {
+    width: 50%;
+    height: 50%; /* ensures proper aspect ratio */
+    fill: white;
+  }
+
+  h2 {
+    font-size: 1rem;
+    margin-left: 0.5rem;
+  }
+}
+
+.content-container {
+  background-color: lightgray;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-template-rows: 20% 80%;
+}
+
+.top-header {
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-column: 1;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.search-box {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+}
+
+.search-box input {
+  background-color: lightgray;
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+}
+
+#search-button {
+  margin: 0.5rem;
+  border: none;
+  font-size: 1rem;
+  height: 3rem;
+  width: 3rem;
+  background-color: white;
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center; /* vertical center */
+  cursor: pointer;
+}
+
+.search-icon {
+  fill: green;
+  width: 3rem; /* same as button width → causes overflow */
+  height: 3rem;
+}
+
+.small-profile {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  gap: 2rem;
+
+  svg {
+    fill: black;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+  }
+}
+
+.large-profile {
+  grid-column: 1;
+  grid-row: 2;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  height: 100%;
+  width: 100%;
+  gap: 2rem;
+
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 0.8rem;
+  }
+
+  img {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    margin-left: 1rem;
+  }
+}
+
+.button-options {
+  display: flex;
+  gap: 4rem;
+  flex-direction: row;
+  justify-content: center;
+
+  button {
+    padding: 0.5rem 1rem;
+    border: none;
+    width: 6rem;
+    height: 2rem;
+    border-radius: 20px;
+    background-color: green;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+}
+
+.left-content {
+  display: flex;
+  flex-direction: column;
+  grid-column: 1;
+  grid-row: 2;
+  align-items: flex-start; /* aligns children to the left */
+  justify-content: center; /* centers children vertically in the column */
+  padding-left: 1rem; /* optional: spacing from edge */
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.left-content > p {
+  text-align: left;
+  margin: 1rem;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.left-content-grid {
+  margin: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  height: 100%;
+  gap: 2rem;
+}
+
+.card {
+  border-left: 4px solid #ff5733;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: grid;
+  grid-template-rows: 1fr, 1fr, 1fr;
+
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: black;
+  }
+
+  div {
+    position: relative;
+    grid-row: 3;
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+    margin: 0.5rem;
+    margin: 0.5rem;
+  }
+
+  h2 {
+    grid-row: 1;
+    margin: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  p {
+    grid-row: 2;
+    margin: 0.5rem;
+    padding: 0.5rem;
+  }
+}
+
+.right-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* aligns children to the left */
+  justify-content: center; /* centers children vertically in the column */
+  padding-left: 1rem; /* optional: spacing from edge */
+}
+
+.right-content > p {
+  text-align: left;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.announcements-card {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  height: 40%;
+  align-items: center;
+}
+
+.announcements-card-content {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  h2 {
+    font-size: 20px;
+    margin: 0.5rem;
+    padding: 0.25rem;
+  }
+
+  p {
+    margin: 0.5rem;
+    padding: 0.25rem;
+  }
+}
+
+.trending-card {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  height: 40%;
+  width: 90%;
+}
+
+.vl {
+  width: 100%;
+  border-top: 3px solid black;
+  justify-self: center;
+}
+
+.trending-card {
+  width: 90%;
+  height: 40%;
+  display: grid;
+  grid-template-rows: repeat(1fr);
+}
+
+.trending-profile {
+  display: flex;
+  flex-direction: row;
+  margin-left: 2rem;
+  gap: 1rem;
+  align-items: center;
+
+  img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 100%;
+  }
+}
+
+.trending-profile-name-description {
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    margin: 0rem;
+    font-size: 22px;
+    font-weight: normal;
+  }
+
+  p {
+    margin: 0rem;
+  }
+}
