@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="script.js" defer></script>
+    <title>My Library</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="side-bar">
+        <h1 class="add-book-header">Add Book</h1>
+        <form class="add-book-form">
+          <label for="input-book-title">Book Title</label><br />
+          <input
+            type="text"
+            id="input-book-title"
+            name="input-book-title"
+          /><br />
+          <label for="input-book-author">Book Author</label><br />
+          <input
+            type="text"
+            id="input-book-author"
+            name="input-book-author"
+          /><br />
+          <label for="input-book-year">Year</label><br />
+          <input
+            type="number"
+            id="input-book-year"
+            name="input-book-year"
+          /><br />
+          <input type="submit" value="submit" class="add-book-submit" />
+        </form>
+      </div>
+      <div class="library-content-panel">
+        <h1 class="my-library-header">My Books</h1>
+        <div class="empty-state">No books in your library</div>
+        <div class="library-grid"></div>
+      </div>
+    </div>
+  </body>
+</html>
