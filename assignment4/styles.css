@@ -10,7 +10,87 @@ body {
 
 .main {
   background-color: red;
-  width: 60%;
-  height: 70%;
+  width: 70%;
+  height: 90%;
   border-radius: 2rem;
+  display: grid;
+  grid-template-rows: 30% 70%;
+  grid-template-columns: 100%;
+  justify-items: center;
+}
+
+.players-prompts {
+  grid-row: 1;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  display: grid;
+  grid-template-rows: 70% 30%;
+  justify-content: center;
+  align-items: center;
+}
+
+.players-prompts-form {
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem;
+}
+
+.control-buttons {
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0.5rem;
+
+  button {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.gameBoard-grid {
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1rem;
+  border-radius: 2rem;
+  width: 90%;
+  height: 90%;
+}
+.cell {
+  background-color: green;
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem;
+
+  justify-content: center;
+
+  button {
+    background-color: green;
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+    border: none;
+  }
+
+  button:not(:disabled):hover {
+    background-color: yellow;
+  }
+
+  button:disabled {
+    background-color: black;
+  }
+}
+
+.cell.filled {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+}
+
+.hidden {
+  display: none;
 }

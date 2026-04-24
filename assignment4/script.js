@@ -1,4 +1,13 @@
-import { createInterface } from "node:readline/promises";
+class player {
+  constructor(name, marker) {
+    this.name = name;
+    this.marker = marker;
+  }
+
+  playerInfo() {
+    return `Name: ${this.name}, Marker: ${this.marker}`;
+  }
+}
 
 class gameBoard {
   constructor(player1, player2) {
@@ -7,15 +16,15 @@ class gameBoard {
     this.player2 = player2;
     this.currentPlayer;
     this.positions = {
-      0.0: "",
-      0.1: "",
-      0.2: "",
-      1.0: "",
-      1.1: "",
-      1.2: "",
-      2.0: "",
-      2.1: "",
-      2.2: "",
+      "0,0": "",
+      "0,1": "",
+      "0,2": "",
+      "1,0": "",
+      "1,1": "",
+      "1,2": "",
+      "2,0": "",
+      "2,1": "",
+      "2,2": "",
     };
   }
 
@@ -30,30 +39,30 @@ class gameBoard {
 
   checkBoard() {
     if (
-      (this.positions[0] === this.currentPlayer.marker &&
-        this.positions[0.1] === this.currentPlayer.marker &&
-        this.positions[0.2] === this.currentPlayer.marker) ||
-      (this.positions[1] === this.currentPlayer.marker &&
-        this.positions[1.1] === this.currentPlayer.marker &&
-        this.positions[1.2] === this.currentPlayer.marker) ||
-      (this.positions[2] === this.currentPlayer.marker &&
-        this.positions[2.1] === this.currentPlayer.marker &&
-        this.positions[2.2] === this.currentPlayer.marker) ||
-      (this.positions[0] === this.currentPlayer.marker &&
-        this.positions[1] === this.currentPlayer.marker &&
-        this.positions[2] === this.currentPlayer.marker) ||
-      (this.positions[0.1] === this.currentPlayer.marker &&
-        this.positions[1.1] === this.currentPlayer.marker &&
-        this.positions[2.1] === this.currentPlayer.marker) ||
-      (this.positions[2] === this.currentPlayer.marker &&
-        this.positions[2.1] === this.currentPlayer.marker &&
-        this.positions[2.2] === this.currentPlayer.marker) ||
-      (this.positions[0] === this.currentPlayer.marker &&
-        this.positions[1.1] === this.currentPlayer.marker &&
-        this.positions[2.2] === this.currentPlayer.marker) ||
-      (this.positions[1] === this.currentPlayer.marker &&
-        this.positions[1.1] === this.currentPlayer.marker &&
-        this.positions[2.0] === this.currentPlayer.marker)
+      (this.positions["0,0"] === this.currentPlayer.marker &&
+        this.positions["0,1"] === this.currentPlayer.marker &&
+        this.positions["0,2"] === this.currentPlayer.marker) ||
+      (this.positions["1,0"] === this.currentPlayer.marker &&
+        this.positions["1,1"] === this.currentPlayer.marker &&
+        this.positions["1,2"] === this.currentPlayer.marker) ||
+      (this.positions["2,0"] === this.currentPlayer.marker &&
+        this.positions["2,1"] === this.currentPlayer.marker &&
+        this.positions["2,2"] === this.currentPlayer.marker) ||
+      (this.positions["0,0"] === this.currentPlayer.marker &&
+        this.positions["1,0"] === this.currentPlayer.marker &&
+        this.positions["2,0"] === this.currentPlayer.marker) ||
+      (this.positions["0,1"] === this.currentPlayer.marker &&
+        this.positions["1,1"] === this.currentPlayer.marker &&
+        this.positions["2,1"] === this.currentPlayer.marker) ||
+      (this.positions["2,0"] === this.currentPlayer.marker &&
+        this.positions["2,1"] === this.currentPlayer.marker &&
+        this.positions["2,2"] === this.currentPlayer.marker) ||
+      (this.positions["0,0"] === this.currentPlayer.marker &&
+        this.positions["1,1"] === this.currentPlayer.marker &&
+        this.positions["2,2"] === this.currentPlayer.marker) ||
+      (this.positions["1,0"] === this.currentPlayer.marker &&
+        this.positions["1,1"] === this.currentPlayer.marker &&
+        this.positions["2,0"] === this.currentPlayer.marker)
     ) {
       return 1;
     } else {
@@ -72,43 +81,38 @@ class gameBoard {
   }
 }
 
-class player {
-  constructor(name, marker) {
-    this.name = name;
-    this.marker = marker;
-  }
-
-  playerInfo() {
-    return `Name: ${this.name}, Marker: ${this.marker}`;
-  }
+function handleSelectCell(e, player) {
+  const el = e.target;
+  const parent = el.parentElement;
+  const value = el.dataset.value;
+  el.remove();
+  parent.textContent = player.marker;
+  parent.classList.add("filled");
 }
 
-const player1 = new player("Mustafa", "O");
-const player2 = new player("Julia", "X");
-const game = new gameBoard(player1, player2);
-game.currentPlayer = player1;
+function runGame(gameboard) {
+  document.querySelector(".players-prompts-form").classList.add("hidden");
+  document.querySelector(".start-btn").classList.add("hidden");
+  document.querySelector(".reset-btn").classList.remove("hidden");
+  document.querySelector(".game-status").classList.remove("hidden");
 
-const rl = createInterface({
-  input: process.stdin,
-  output: process.stdout,
+  //   while (!gameBoard.checkBoard()) {}
+}
+
+function handleStartButton(e) {
+  const p1 = document.getElementById("player1-name");
+  const p2 = document.getElementById("player2-name");
+  const player1 = new player(p1.value.trim(), "X");
+  const player2 = new player(p2.value.trim(), "O");
+  const game = new gameBoard(player1, player2);
+  runGame(game);
+}
+
+let buttons = document.querySelectorAll(".boardcellbutton");
+buttons.forEach((btn) => {
+  btn.addEventListener("click", handleSelectCell);
 });
 
-var check = game.checkBoard();
-
-while (!check && game.totalMoves !== 9) {
-  var input = await rl.question(
-    `${game.currentPlayer.name} it's your turn\nChoose a position: `,
-  );
-
-  game.placeMove(input);
-  check = game.checkBoard();
-  if (check) {
-    console.log("We have a winner");
-  } else if (game.totalMoves === 9) {
-    console.log("No more moves are available");
-  }
-  game.switchPlayer();
-  console.log(game.displayGameBoard());
-}
-
-rl.close();
+document
+  .querySelector(".start-btn")
+  .addEventListener("click", handleStartButton);
