@@ -108,6 +108,13 @@ function handleStartButton(e) {
   runGame(game);
 }
 
+function handleResetButton(e) {
+  document.querySelector(".players-prompts-form").classList.remove("hidden");
+  document.querySelector(".start-btn").classList.remove("hidden");
+  document.querySelector(".reset-btn").classList.add("hidden");
+  document.querySelector(".game-status").classList.add("hidden");
+}
+
 let buttons = document.querySelectorAll(".boardcellbutton");
 buttons.forEach((btn) => {
   btn.addEventListener("click", handleSelectCell);
@@ -116,3 +123,7 @@ buttons.forEach((btn) => {
 document
   .querySelector(".start-btn")
   .addEventListener("click", handleStartButton);
+
+document
+  .querySelector(".reset-btn")
+  .addEventListener("click", handleResetButton);
