@@ -54,15 +54,15 @@ class gameBoard {
       (this.positions["0,1"] === this.currentPlayer.marker &&
         this.positions["1,1"] === this.currentPlayer.marker &&
         this.positions["2,1"] === this.currentPlayer.marker) ||
-      (this.positions["2,0"] === this.currentPlayer.marker &&
-        this.positions["2,1"] === this.currentPlayer.marker &&
-        this.positions["2,2"] === this.currentPlayer.marker) ||
       (this.positions["0,0"] === this.currentPlayer.marker &&
         this.positions["1,1"] === this.currentPlayer.marker &&
         this.positions["2,2"] === this.currentPlayer.marker) ||
       (this.positions["0,2"] === this.currentPlayer.marker &&
         this.positions["1,1"] === this.currentPlayer.marker &&
-        this.positions["2,0"] === this.currentPlayer.marker)
+        this.positions["2,0"] === this.currentPlayer.marker) ||
+      (this.positions["0,2"] === this.currentPlayer.marker &&
+        this.positions["1,2"] === this.currentPlayer.marker &&
+        this.positions["2,2"] === this.currentPlayer.marker)
     ) {
       return 1;
     } else {
@@ -110,18 +110,6 @@ function handleSelectCell(e) {
   }
 }
 
-function runGame(gameBoardInstance) {
-  document.querySelector(".players-prompts-form").classList.add("hidden");
-  document.querySelector(".start-btn").classList.add("hidden");
-  document.querySelector(".reset-btn").classList.remove("hidden");
-  document.querySelector(".game-status").classList.remove("hidden");
-  console.log("Game started");
-
-  // while (!gameBoardInstance.checkBoard()) {
-  //   gameBoardInstance.switchPlayer();
-  // }
-}
-
 function handleStartButton(e) {
   const p1 = document.getElementById("player1-name");
   const p2 = document.getElementById("player2-name");
@@ -129,10 +117,23 @@ function handleStartButton(e) {
   const player2 = new player(p2.value.trim(), "O");
   currentGame = new gameBoard(player1, player2);
   currentGame.currentPlayer = player1;
-  runGame(currentGame);
+  document.querySelector(".players-prompts-form").classList.add("hidden");
+  document.querySelector(".start-btn").classList.add("hidden");
+  document.querySelector(".reset-btn").classList.remove("hidden");
   document.querySelectorAll(".boardcellbutton").forEach((btn) => {
     console.log(btn.classList.remove("locked"));
   });
+
+  const firstPlayerInfoMessage = document.querySelector(
+    ".player1-info-message",
+  );
+  firstPlayerInfoMessage.textContent = `${player1.name} ${player1.marker}`;
+  const secondPlayerInfoMessage = document.querySelector(
+    ".player2-info-message",
+  );
+  secondPlayerInfoMessage.textContent = `${player2.name} ${player2.marker}`;
+
+  document.querySelector(".players-info").classList.remove("hidden");
 }
 
 function handleResetButton(e) {
@@ -143,6 +144,7 @@ function handleResetButton(e) {
   document.querySelectorAll(".boardcellbutton").forEach((btn) => {
     btn.textContent = "";
   });
+  document.querySelector(".players-info").classList.add("hidden");
 }
 
 let buttons = document.querySelectorAll(".boardcellbutton");
