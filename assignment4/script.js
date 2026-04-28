@@ -89,22 +89,21 @@ function handleSelectCell(e) {
   currentGame.placeMove(value);
   el.textContent = currentGame.positions[value];
   el.classList.add("locked");
+  el.classList.add(`${currentGame.currentPlayer.marker}`);
 
   if (currentGame.checkBoard()) {
-    console.log(currentGame.currentPlayer);
     document.querySelector(".players-prompts-form").classList.add("hidden");
     document.querySelector(".reset-btn").classList.remove("hidden");
     document.querySelector(".game-status").classList.remove("hidden");
     document.querySelector(".message").textContent =
       `${currentGame.currentPlayer.name} WINS`;
     document.querySelectorAll(".boardcellbutton").forEach((btn) => {
-      console.log(btn.classList.add("locked"));
+      btn.classList.add("locked");
     });
   } else if (currentGame.totalMoves === 9) {
     document.querySelector(".players-prompts-form").classList.add("hidden");
-    document.querySelector(".reset-btn").classList.add("hidden");
     document.querySelector(".game-status").classList.remove("hidden");
-    document.querySelector(".message").textContent = "DRAW!";
+    document.querySelector(".message").textContent = "DRAW !";
   } else {
     currentGame.switchPlayer();
   }
@@ -121,7 +120,7 @@ function handleStartButton(e) {
   document.querySelector(".start-btn").classList.add("hidden");
   document.querySelector(".reset-btn").classList.remove("hidden");
   document.querySelectorAll(".boardcellbutton").forEach((btn) => {
-    console.log(btn.classList.remove("locked"));
+    btn.classList.remove("locked");
   });
 
   const firstPlayerInfoMessage = document.querySelector(
@@ -141,14 +140,26 @@ function handleResetButton(e) {
   document.querySelector(".start-btn").classList.remove("hidden");
   document.querySelector(".reset-btn").classList.add("hidden");
   document.querySelector(".game-status").classList.add("hidden");
+  document.querySelector(".players-info").classList.add("hidden");
+  lockClearButton(e);
+}
+
+function lockClearButton(btn) {
   document.querySelectorAll(".boardcellbutton").forEach((btn) => {
     btn.textContent = "";
   });
-  document.querySelector(".players-info").classList.add("hidden");
+  document.querySelectorAll(".boardcellbutton").forEach((btn) => {
+    btn.classList.add("locked");
+  });
+  document.querySelectorAll(".boardcellbutton").forEach((btn) => {
+    btn.classList.remove("X");
+  });
+  document.querySelectorAll(".boardcellbutton").forEach((btn) => {
+    btn.classList.remove("O");
+  });
 }
 
-let buttons = document.querySelectorAll(".boardcellbutton");
-buttons.forEach((btn) => {
+document.querySelectorAll(".boardcellbutton").forEach((btn) => {
   btn.addEventListener("click", handleSelectCell);
 });
 
