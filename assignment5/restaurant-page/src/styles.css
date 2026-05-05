@@ -1,0 +1,39 @@
+/* styles.css */
+body {
+  background-color: rebeccapurple;
+  width: 100%;
+  height: 100%;
+}
+
+.navigation-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.bakery-name {
+  font-family: "Georgia", serif;
+  font-size: 2.5rem;
+  color: white;
+  padding: 2rem;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+
+  button {
+    height: 50%;
+  }
+}
+
+#content {
+  max-width: 800px;
+  margin: 40px auto;
+  text-align: center;
+  font-family: "Georgia", serif;
+  animation: fadeIn 0.8s ease;
+}
