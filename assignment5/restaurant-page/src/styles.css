@@ -113,12 +113,13 @@ nav {
 .menu-section {
   background-color: gray;
   width: 100%;
-  height: 100%;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-items: center;
+  margin: 1rem;
+  padding: 1rem;
 }
 
 .menu-header {
@@ -154,4 +155,38 @@ nav {
     height: auto;
     object-fit: cover;
   }
+}
+
+.our-story-section {
+  background-color: green;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 1fr;
+  margin: 1rem;
+  padding: 1rem;
+  align-items: center;
+  justify-items: center;
+}
+
+.our-story-image {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
+}
+
+.our-story-text-section {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.our-story-text-title {
+  font-size: 2.5rem;
+}
+
+.our-story-text-content {
+  font-size: 1.5rem;
 }
