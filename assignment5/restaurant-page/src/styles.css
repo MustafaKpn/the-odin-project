@@ -222,3 +222,131 @@ nav {
     border-radius: 100%;
   }
 }
+
+.contact-section {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: 100%;
+  margin-top: 3rem;
+  background-color: pink;
+  gap: 2rem;
+}
+
+.contact-section-left {
+  background-color: green;
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.contact-header1 {
+  align-content: left;
+}
+
+.contact-cards {
+  background-color: red;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  justify-items: left;
+}
+
+.contact-element {
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+  align-items: center;
+
+  svg {
+    width: 3rem;
+    height: 3rem;
+    fill: white;
+  }
+}
+
+.contact-info-text {
+  width: 20rem;
+}
+
+.map {
+  grid-column: 2;
+  align-content: center;
+  justify-items: center;
+}
+
+.footer-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 80% 5% 15%;
+  background-color: yellow;
+  width: 100%;
+  justify-items: center;
+  align-content: center;
+
+  h1 {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    font-size: 26px;
+  }
+}
+
+.store-description {
+  grid-column: 1;
+  grid-row: 1;
+  width: 60%;
+  justify-items: left;
+  align-content: left;
+
+  p {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    text-align: justify;
+  }
+}
+
+.quick-links {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.misc {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.solid-line {
+  grid-row: 2;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  border: none;
+  border-top: 2px solid red;
+  width: 100%;
+}
+
+.policy-section {
+  grid-row: 3;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.socials {
+  margin-bottom: 2rem;
+  svg {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+.payment-options-logos {
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  svg {
+    width: 3rem;
+    height: 3rem;
+  }
+}
