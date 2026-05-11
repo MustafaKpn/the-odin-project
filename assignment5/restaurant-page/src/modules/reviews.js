@@ -25,7 +25,6 @@ const reviews = [
 ];
 
 function loadReviews() {
-  console.log("reviews are loading");
   const content = document.getElementById("content");
 
   const reviewsSection = document.createElement("section");
@@ -42,11 +41,13 @@ function loadReviews() {
   reviews.forEach((review) => {
     const reviewCard = document.createElement("div");
     reviewCard.classList.add("review-card");
+
     const reviewText = document.createElement("p");
-    console.log(review.comment);
     reviewText.textContent = review.comment;
+
     const reviewerName = document.createElement("h3");
     reviewerName.textContent = review.name;
+
     const reviewerPic = document.createElement("img");
     reviewerPic.src = review.profilePic;
 
