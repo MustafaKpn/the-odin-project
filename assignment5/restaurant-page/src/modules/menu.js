@@ -1,8 +1,19 @@
+import croissantImg from "../../assets/menu_items/croissant.jpg";
+import painAuChocolatImg from "../../assets/menu_items/chocolate-croissant.jpg";
+import cinnamonRollImg from "../../assets/menu_items/cinnamon-rolls.jpg";
+import blueberryMuffinImg from "../../assets/menu_items/blueberry-muffin.jpg";
+import chocolateDonutImg from "../../assets/menu_items/chocolate-donut.jpg";
+import cheesecakeImg from "../../assets/menu_items/cheesecake-slice.jpg";
+import chocolateCakeImg from "../../assets/menu_items/chocolatecake-slice.jpg";
+import redVelvetImg from "../../assets/menu_items/redvelvetcakeslice.jpg";
+import applePieImg from "../../assets/menu_items/applepieslice.jpg";
+
 function loadMenu() {
   const content = document.getElementById("content");
 
   const menuSection = document.createElement("section");
   menuSection.classList.add("menu-section");
+  menuSection.id = "menu-section";
 
   const menuHeader = document.createElement("div");
   menuHeader.classList.add("menu-header");
@@ -22,67 +33,67 @@ function loadMenu() {
 
   const menuItems = [
     {
-      name: "Chocolate Cake",
+      name: "Croissant (buttery pastry)",
       description:
-        "Rich and moist chocolate cake topped with creamy chocolate frosting.",
-      price: "$5.99",
-      image:
-        "https://images.stockcake.com/public/5/3/f/53fa0e6b-a71f-4b25-bae8-adaa9531bb2b_large/raspberry-cream-cake-stockcake.jpg",
+        "A classic French pastry made with laminated dough that creates dozens of delicate, buttery layers. It has a crisp, golden exterior that shatters slightly when bitten, revealing a soft, airy, and rich interior. Best served warm for maximum flakiness and aroma.",
+      price: "$3.00",
+      image: croissantImg,
     },
     {
-      name: "Vanilla Ice Cream",
-      description: "Creamy vanilla ice cream made with real vanilla beans.",
-      price: "$3.99",
-      image:
-        "https://images.stockcake.com/public/5/3/f/53fa0e6b-a71f-4b25-bae8-adaa9531bb2b_large/raspberry-cream-cake-stockcake.jpg",
+      name: "Pain au chocolat (chocolate pastry)",
+      description:
+        "A traditional French viennoiserie made from buttery layered dough wrapped around rich dark chocolate. As it bakes, the chocolate softens inside while the exterior becomes lightly crisp and golden, creating a balanced contrast of sweetness and texture.",
+      price: "$3.75",
+      image: painAuChocolatImg,
     },
     {
-      name: "Strawberry Cheesecake",
+      name: "Cinnamon roll",
       description:
-        "Classic cheesecake with a graham cracker crust and fresh strawberries.",
-      price: "$6.99",
-      image:
-        "https://images.stockcake.com/public/5/3/f/53fa0e6b-a71f-4b25-bae8-adaa9531bb2b_large/raspberry-cream-cake-stockcake.jpg",
+        "A soft and fluffy baked roll swirled generously with cinnamon, brown sugar, and butter. Once baked, it becomes gooey inside and is often topped with smooth vanilla icing that melts into the warm layers for a sweet, comforting treat.",
+      price: "$4.50",
+      image: cinnamonRollImg,
     },
     {
-      name: "Lemon Tart",
+      name: "Blueberry muffin",
       description:
-        "Tangy lemon tart with a buttery crust and a dusting of powdered sugar.",
-      price: "$4.99",
-      image:
-        "https://images.stockcake.com/public/5/3/f/53fa0e6b-a71f-4b25-bae8-adaa9531bb2b_large/raspberry-cream-cake-stockcake.jpg",
+        "A moist, bakery-style muffin filled with juicy blueberries that burst during baking, creating pockets of fruity flavor. The top is slightly crisp and golden while the inside remains soft, fluffy, and aromatic.",
+      price: "$3.50",
+      image: blueberryMuffinImg,
     },
     {
-      name: "Lemon Tart",
+      name: "Chocolate donut",
       description:
-        "Tangy lemon tart with a buttery crust and a dusting of powdered sugar.",
-      price: "$4.99",
-      image:
-        "https://images.stockcake.com/public/5/3/f/53fa0e6b-a71f-4b25-bae8-adaa9531bb2b_large/raspberry-cream-cake-stockcake.jpg",
+        "A light and airy fried dough donut coated with a smooth chocolate glaze. It has a soft interior with a slightly crisp outer layer, often finished with sprinkles or drizzle for added sweetness.",
+      price: "$2.75",
+      image: chocolateDonutImg,
     },
     {
-      name: "Lemon Tart",
+      name: "Cheesecake slice",
       description:
-        "Tangy lemon tart with a buttery crust and a dusting of powdered sugar.",
-      price: "$4.99",
-      image:
-        "https://images.stockcake.com/public/5/3/f/53fa0e6b-a71f-4b25-bae8-adaa9531bb2b_large/raspberry-cream-cake-stockcake.jpg",
+        "A rich and creamy dessert made with smooth cream cheese layered over a buttery biscuit base. It has a dense yet silky texture and is often topped with fruit, caramel, or berry sauces for extra flavor.",
+      price: "$5.50",
+      image: cheesecakeImg,
     },
     {
-      name: "Lemon Tart",
+      name: "Chocolate cake slice",
       description:
-        "Tangy lemon tart with a buttery crust and a dusting of powdered sugar.",
-      price: "$4.99",
-      image:
-        "https://images.stockcake.com/public/5/3/f/53fa0e6b-a71f-4b25-bae8-adaa9531bb2b_large/raspberry-cream-cake-stockcake.jpg",
+        "A decadent layered dessert made with moist chocolate sponge and rich chocolate frosting or ganache. Each bite delivers deep cocoa flavor with a soft, melt-in-your-mouth texture.",
+      price: "$6.25",
+      image: chocolateCakeImg,
     },
     {
-      name: "Lemon Tart",
+      name: "Red velvet cake slice",
       description:
-        "Tangy lemon tart with a buttery crust and a dusting of powdered sugar.",
-      price: "$4.99",
-      image:
-        "https://images.stockcake.com/public/5/3/f/53fa0e6b-a71f-4b25-bae8-adaa9531bb2b_large/raspberry-cream-cake-stockcake.jpg",
+        "A smooth and velvety cocoa-flavored cake with its signature deep red color. It is layered with tangy cream cheese frosting, creating a perfect balance between sweetness and slight acidity.",
+      price: "$6.50",
+      image: redVelvetImg,
+    },
+    {
+      name: "Apple pie slice",
+      description:
+        "A warm and comforting dessert made with tender apples cooked in cinnamon and sugar, enclosed in a flaky, buttery pastry crust. The filling is soft and aromatic with a lightly crisp top layer.",
+      price: "$5.25",
+      image: applePieImg,
     },
   ];
 

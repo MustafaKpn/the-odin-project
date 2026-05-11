@@ -71,6 +71,7 @@ function loadContact() {
 
   const contactSection = document.createElement("section");
   contactSection.classList.add("contact-section");
+  contactSection.id = "contact-section";
 
   const contactLeftSection = document.createElement("div");
   contactLeftSection.classList.add("contact-section-left");
@@ -84,10 +85,19 @@ function loadContact() {
   contactHeader2.textContent =
     "Feel free to contact us by phone or email, or stop by our cozy sweets bar in Amsterdam. We’d love to see you!";
 
+  const contactHeader3 = document.createElement("p");
+  contactHeader3.classList.add("contact-header2");
+  contactHeader3.textContent = "We’d love to see you!";
+
   const contactCards = document.createElement("div");
   contactCards.classList.add("contact-cards");
 
-  contactLeftSection.append(contactHeader1, contactHeader2, contactCards);
+  contactLeftSection.append(
+    contactHeader1,
+    contactHeader2,
+    contactHeader3,
+    contactCards,
+  );
 
   contactInfos.forEach((e) => {
     const contactElement = document.createElement("div");

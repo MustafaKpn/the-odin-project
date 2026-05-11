@@ -26,6 +26,7 @@ function loadHome() {
 
   const welcomingSection = document.createElement("section");
   welcomingSection.classList.add("welcoming-section");
+  welcomingSection.id = "welcoming-section";
 
   const welcomingSectionRight = document.createElement("div");
   welcomingSectionRight.classList.add("welcoming-section-right");
@@ -50,6 +51,11 @@ function loadHome() {
   const menuBtn = document.createElement("button");
   menuBtn.classList.add("menu-btn");
   menuBtn.textContent = "Sweets";
+  menuBtn.addEventListener("click", () => {
+    document.getElementById("menu-section").scrollIntoView({
+      behavior: "smooth",
+    });
+  });
 
   const welcomingBox = document.createElement("div");
   const specificationCard1 = createSpecificationCard(

@@ -1,3 +1,5 @@
+import bakerImage from "../../assets/baker.jpg";
+
 function loadOurStory() {
   const content = document.getElementById("content");
 
@@ -6,8 +8,7 @@ function loadOurStory() {
 
   const ourStoryImage = document.createElement("img");
   ourStoryImage.classList.add("our-story-image");
-  ourStoryImage.src =
-    "https://images.stockcake.com/public/5/3/f/53fa0e6b-a71f-4b25-bae8-adaa9531bb2b_large/raspberry-cream-cake-stockcake.jpg";
+  ourStoryImage.src = bakerImage;
 
   const ourStoryText = document.createElement("div");
   ourStoryText.classList.add("our-story-text-section");

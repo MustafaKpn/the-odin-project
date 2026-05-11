@@ -3,18 +3,19 @@ function loadFooter() {
 
   const footerSection = document.createElement("section");
   footerSection.classList.add("footer-section");
+  footerSection.id = "footer-section";
 
   const storeDescription = document.createElement("div");
   storeDescription.classList.add("store-description");
 
   const storeName = document.createElement("h1");
   storeName.classList.add("store-name");
-  storeName.textContent = "mustafa Bakery";
+  storeName.textContent = "Kaplan Bakery";
 
   const storeAbout = document.createElement("p");
   storeAbout.classList.add("store-about");
   storeAbout.textContent =
-    "Feel free to contact us by phone or email, or stop by our cozy sweets bar in Amsterdam. We’d love to see you!";
+    "Feel free to contact us by phone or email, or stop by our cozy sweets bar in Kaplan. We’d love to see you!";
 
   storeDescription.append(storeName, storeAbout);
   const quickLinks = document.createElement("div");
@@ -22,10 +23,16 @@ function loadFooter() {
 
   const quickLinksTitle = document.createElement("h1");
   quickLinksTitle.textContent = "Quick Links";
+
   const footerHomeBtn = document.createElement("a");
   footerHomeBtn.textContent = "Home";
+  footerHomeBtn.href = "#welcoming-section";
+  footerHomeBtn.classList.add("home-link");
+
   const footerMenuBtn = document.createElement("a");
   footerMenuBtn.textContent = "Menu";
+  footerMenuBtn.href = "#menu-section";
+  footerMenuBtn.classList.add("menu-link");
 
   quickLinks.append(quickLinksTitle, footerHomeBtn, footerMenuBtn);
 
@@ -43,7 +50,7 @@ function loadFooter() {
   instagramBtn.classList.add("instagram-logo");
 
   const tiktokBtn = document.createElement("a");
-  tiktokBtn.innerHTML = `<svg viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.cls-1{fill:none;stroke:#020202;stroke-miterlimit:10;stroke-width:1.89px;}</style></defs><path class="cls-1" d="M12.94,1.61V15.78a2.83,2.83,0,0,1-2.83,2.83h0a2.83,2.83,0,0,1-2.83-2.83h0a2.84,2.84,0,0,1,2.83-2.84h0V9.17h0A6.61,6.61,0,0,0,3.5,15.78h0a6.61,6.61,0,0,0,6.61,6.61h0a6.61,6.61,0,0,0,6.61-6.61V9.17l.2.1a8.08,8.08,0,0,0,3.58.84h0V6.33l-.11,0a4.84,4.84,0,0,1-3.67-4.7H12.94Z"></path></g></svg>`;
+  tiktokBtn.innerHTML = `<svg viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" fill="lightgrey"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.cls-1{fill:lightgrey;stroke:#020202;stroke-miterlimit:10;stroke-width:1.89px;}</style></defs><path class="cls-1" d="M12.94,1.61V15.78a2.83,2.83,0,0,1-2.83,2.83h0a2.83,2.83,0,0,1-2.83-2.83h0a2.84,2.84,0,0,1,2.83-2.84h0V9.17h0A6.61,6.61,0,0,0,3.5,15.78h0a6.61,6.61,0,0,0,6.61,6.61h0a6.61,6.61,0,0,0,6.61-6.61V9.17l.2.1a8.08,8.08,0,0,0,3.58.84h0V6.33l-.11,0a4.84,4.84,0,0,1-3.67-4.7H12.94Z"></path></g></svg>`;
   tiktokBtn.classList.add("tiktok-btn");
 
   socials.append(instagramBtn, tiktokBtn);
@@ -71,7 +78,7 @@ function loadFooter() {
 
   const policySection = document.createElement("p");
   policySection.classList.add("policy-section");
-  policySection.textContent = "© 2025 Amsterdam Bakery. All rights reserved.";
+  policySection.textContent = "© 2026 Kaplan Bakery. All rights reserved.";
 
   footerSection.append(
     storeDescription,

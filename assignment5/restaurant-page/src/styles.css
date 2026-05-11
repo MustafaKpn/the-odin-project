@@ -39,7 +39,7 @@ header {
 }
 
 .word1 {
-  color: #99ad7a;
+  color: #839705;
 }
 
 .word2 {
@@ -59,6 +59,26 @@ nav {
 
 .home-link {
   color: #ce2626;
+  text-decoration: none;
+}
+
+.home-link:visited {
+  color: inherit;
+}
+
+.menu-link {
+  text-decoration: none;
+}
+
+.menu-link:visited {
+  color: inherit;
+}
+.contact-link {
+  text-decoration: none;
+}
+
+.contact-link:visited {
+  color: inherit;
 }
 
 #content {
@@ -78,20 +98,20 @@ nav {
 }
 
 .welcoming-section-right {
-  width: 100%; /* fill available space */
-  max-width: 40rem; /* optional max width */
+  width: 100%;
+  max-width: 40rem;
   display: flex;
-  height: auto; /* container height adjusts to content */
+  height: auto;
   align-items: start; /* stick to top of column */
-  padding: 2rem;
 }
 
 .welcoming-section-right img {
-  width: 100%; /* fill the container width */
-  height: auto; /* maintain aspect ratio */
-  max-height: 40rem; /* optional height limit */
+  width: 100%;
+  height: 100%;
+  max-height: 40rem;
   max-width: 40rem;
   border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 }
 
 .welcoming-section-left {
@@ -122,11 +142,18 @@ nav {
   font-weight: bold;
 }
 
+.menu-btn:hover {
+  cursor: pointer;
+  background-color: white;
+  border: 3px #ce2626 solid;
+  font-size: 20px;
+  color: #ce2626;
+}
+
 .welcoming-box {
   grid-row: 2;
   grid-column-start: 1;
   grid-column-end: 3;
-  background-color: yellow;
   width: 100%;
   height: 100%;
   display: flex;
@@ -137,7 +164,7 @@ nav {
 }
 
 .specification-card {
-  background-color: lightgray;
+  background-color: rgb(247, 247, 247);
   align-items: center;
   justify-content: center;
   display: flex;
@@ -146,13 +173,18 @@ nav {
   border-radius: 1rem;
 
   svg {
-    width: 2rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
   }
 }
 
+.specification-card:hover {
+  transition: 0.5s;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
 .menu-section {
-  background-color: gray;
+  background-color: rgb(240, 240, 240);
   width: 100%;
 
   display: flex;
@@ -163,17 +195,19 @@ nav {
 }
 
 .menu-header {
-  background-color: pink;
+  background-color: rgb(240, 240, 240);
+
   width: 100%;
   margin: 0.5rem;
   padding: 0.5rem;
+  font-size: 24px;
 }
 
 .menu-items-grid {
-  background-color: red;
+  background-color: rgb(240, 240, 240);
   display: grid;
-  grid-template-columns: repeat(auto-fit, 22rem);
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, 30rem);
+  gap: 2rem;
   margin: 0.5rem;
   padding: 0.5rem;
   justify-content: center;
@@ -190,21 +224,31 @@ nav {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
   img {
     width: 100%;
-    height: auto;
+    aspect-ratio: 4 / 3;
     object-fit: cover;
+    display: block;
+  }
+
+  p {
+    padding: 1rem;
   }
 }
 
+.menu-item-price {
+  font-weight: bold;
+}
+
 .our-story-section {
-  background-color: green;
+  background-color: white;
   width: 100%;
   height: 100%;
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 1fr;
-  padding: 1rem;
+  padding: 8rem;
   align-items: center;
   justify-items: center;
 }
@@ -231,24 +275,25 @@ nav {
 }
 
 .reviews-section {
-  background-color: yellow;
+  background-color: rgb(240, 240, 240);
+
   width: 100%;
   justify-items: center;
   align-items: center;
+  padding: 4rem;
 }
 
 .reviews-gallary {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .review-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: gray;
   border-radius: 1rem;
   margin: 0.5rem;
   padding: 0.5rem;
@@ -257,50 +302,64 @@ nav {
   img {
     margin: 0.5rem;
     width: 4rem;
-    height: 4rem;
+    aspect-ratio: 1;
     border-radius: 100%;
+  }
+
+  p {
+    font-style: italic;
   }
 }
 
 .contact-section {
+  background-color: #99ad7a;
   display: grid;
   grid-template-columns: 50% 50%;
   width: 100%;
-  margin-top: 3rem;
-  background-color: pink;
-  /* gap: 1rem; */
+  padding: 3rem;
 }
 
 .contact-section-left {
-  background-color: green;
   grid-column: 1;
   display: flex;
   flex-direction: column;
   margin: 0.5rem;
   padding: 0.5rem;
+  text-align: left;
 }
 
 .contact-header1 {
-  align-content: left;
+  font-size: 34px;
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+.contact-header2 {
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.contact-header2 {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  margin-top: 0rem;
+  padding-top: 0rem;
 }
 
 .contact-cards {
-  background-color: red;
   margin: 0.5rem;
   padding: 0.5rem;
-  justify-items: left;
 }
 
 .contact-element {
   display: flex;
   flex-direction: row;
-  gap: 4rem;
+  gap: 2rem;
   align-items: center;
 
   svg {
-    width: 3rem;
-    height: 3rem;
-    fill: white;
+    width: 2rem;
+    height: 2rem;
+    fill: #6a0404;
   }
 }
 
@@ -315,10 +374,11 @@ nav {
 }
 
 .footer-section {
+  padding: 3rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 80% 5% 15%;
-  background-color: yellow;
+  background-color: #172c04;
   width: 100%;
   justify-items: center;
   align-content: center;
@@ -331,6 +391,7 @@ nav {
 }
 
 .store-description {
+  color: #839705;
   grid-column: 1;
   grid-row: 1;
   width: 60%;
@@ -338,6 +399,7 @@ nav {
   align-content: left;
 
   p {
+    color: lightgrey;
     margin: 0.5rem;
     padding: 0.5rem;
     text-align: justify;
@@ -345,15 +407,25 @@ nav {
 }
 
 .quick-links {
+  color: white;
   grid-column: 2;
   grid-row: 1;
   display: flex;
   flex-direction: column;
+  gap: 1rem;
+
+  a {
+    color: lightgrey;
+  }
 }
 
 .misc {
+  color: white;
   grid-column: 3;
   grid-row: 1;
+  svg {
+    fill: lightgrey;
+  }
 }
 
 .solid-line {
@@ -361,7 +433,8 @@ nav {
   grid-column-start: 1;
   grid-column-end: 4;
   border: none;
-  border-top: 2px solid red;
+  border-top: 2px solid #839705;
+  margin: 1rem;
   width: 100%;
 }
 
@@ -369,6 +442,9 @@ nav {
   grid-row: 3;
   grid-column-start: 1;
   grid-column-end: 4;
+  color: white;
+  text-align: left;
+  justify-self: left;
 }
 
 .socials {
