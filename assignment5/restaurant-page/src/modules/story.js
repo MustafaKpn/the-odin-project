@@ -20,7 +20,7 @@ function loadOurStory() {
   const ourStoryTextContent = document.createElement("p");
   ourStoryTextContent.classList.add("our-story-text-content");
   ourStoryTextContent.textContent =
-    "Amsterdam Bakery was born from a passion for delicious desserts and a desire to share unique flavor experiences. Our founder began his career in pastry arts in Paris and brought his knowledge and skills back to the Netherlands.\n At Amsterdam Bakery, we believe that a great dessert is more than just sweetness, it’s a work of art that stimulates all the senses. We use only the finest ingredients and combine traditional techniques with modern creativity.";
+    "Kaplan Bakery was born from a passion for delicious desserts and a desire to share unique flavor experiences. Our founder began his career in pastry arts in Paris and brought his knowledge and skills back to the Netherlands.\n At Kaplan Bakery, we believe that a great dessert is more than just sweetness, it’s a work of art that stimulates all the senses. We use only the finest ingredients and combine traditional techniques with modern creativity.";
 
   ourStoryText.append(ourStoryTextTitle, ourStoryTextContent);
 
